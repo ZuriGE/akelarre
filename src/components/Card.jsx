@@ -1,7 +1,10 @@
-export default function Card({book, addToCart}){
+import BookInfo from "./BookFile"
+
+export default function Card({book, addToCart,showBookInfo, hideBookInfo}){
 
     const {id, title, type, author,price, img, summary, isbn,year,pages,tags} = book
 
+  
     return(
         <>
             <div className="card">
@@ -18,7 +21,7 @@ export default function Card({book, addToCart}){
                 </div>
                 <div className="buttonContainer">
 
-                <button>
+                <button onClick={()=>showBookInfo(book)}>
                     Ver ficha
                 </button>
                 <button className="cta" onClick={() => addToCart(book)}>

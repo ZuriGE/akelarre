@@ -98,7 +98,8 @@ header h1 {
   top: 0px;
   padding: 12px;
   display: none;
-  padding-top: 60px
+  padding-top: 60px;
+  z-index: 10;
 }
 
 .extendedCartContent {
@@ -189,6 +190,13 @@ header h1 {
 
 .trashCanBtn i {
   font-size: 1rem;
+  transition: all linear 0.1s;
+}
+
+.trashCanBtn:hover i {
+  transform: scale(1.1);
+  color: var(--contrast);
+
 }
 
 .cartTotal {
@@ -319,4 +327,93 @@ button.cta {
 
 button.cta:hover {
   background-color: var(--contrastHover);
+}
+
+/* modal info */
+.modalContainer {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 70px);
+  background-color: var(--neutral);
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.infoCard {
+  width: 70%;
+  background-color: var(--light);
+  border-radius: 8px;
+  display: flex;
+  padding: 20px
+}
+
+.imgContainerInfo {
+  width: 25%;
+
+}
+
+.imgContainerInfo img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.innerContainer {
+  width: 75%;
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative
+}
+
+.innerContainer h2 {
+  font-family: lobster;
+  font-size: 2.2rem;
+  color: var(--dark);
+  padding: 5px 0;
+  border-bottom: 1px solid var(--contrast);
+}
+
+.innerContainer span {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+
+.flexCont {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--contrast)
+}
+
+.sinTitle {
+  padding: 16px 0 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.bookFileBtn {
+  width: 50%;
+  margin: 0 25%;
+}
+
+.closeInfo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--neutral);
+  color: var(--dark);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.closeInfo:hover {
+  background-color: var(--dark);
+  color: var(--light)
+}
+
+.closeInfo i {
+  line-height: 2rem;
 }

@@ -3,8 +3,24 @@ import './App.css'
 import{db} from "./data/book_db"
 import Card from './components/Card'
 import Header from './components/Header'
+import BookFile from './components/BookFile'
 
 function App() {
+
+  //state to show/hide book info file
+  const [showInfo, setShowInfo]=useState(false);
+  const [infoBook, setInfoBook]=useState(null)
+
+  const showBookInfo=(book)=>{
+    setInfoBook(book)
+    setShowInfo(true)
+  }
+
+  const hideBookInfo=()=>{
+      setShowInfo(false)
+  }
+
+
 
   //get book data from database stored in js object
   const [data]=useState(db)
@@ -16,6 +32,7 @@ function App() {
   }
 
   const [cart, setCart]=useState(initialCart)
+
 
   //Apply changes to locally stored cart
   useEffect (()=>{
@@ -79,18 +96,32 @@ function App() {
       />
 
       <main>
-        <div className="bookContainer">
-          {data.map((book)=>
-          <Card
-            key = {book.id}
-            book={book}
-            addToCart={addToCart}
 
-          />
-        )}
+        {!showInfo ? (
+          <div className="bookContainer">
+            {data.map((book)=>
+              <Card
+                key = {book.id}
+                book={book}
+                addToCart={addToCart}
+                showBookInfo={showBookInfo}
+              />
+           )}         
+          </div>
+        ):(
 
          
-        </div>
+           <BookFile
+            infoBook={infoBook}
+            addToCart={addToCart}
+            
+            hideBookInfo={hideBookInfo}
+            ></BookFile>
+          
+        )
+        
+        }      
+
 
       </main>
 

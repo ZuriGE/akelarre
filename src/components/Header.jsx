@@ -13,6 +13,7 @@ export default function Header ({cart, removeFromCart, increaseQuantity, decreas
         <h1>Akelarre</h1>
         </div>
 
+
         <div className="cartContainer">
             <i className="fa-solid fa-basket-shopping"></i>
             <div className="dot">
@@ -21,7 +22,7 @@ export default function Header ({cart, removeFromCart, increaseQuantity, decreas
             <div className="extendedCart">
                 <div className="extendedCartContent">
                     {isEmpty ? (
-                        <p className="textAlignCenter">El carrito está vacío</p> 
+                        <p className="textAlignCenter">Tu cesta de la compra está vacía</p> 
                     ):(
                         <>
                         <p className="textAlignCenter borderBottom">Tu cesta de la compra</p> 
@@ -60,7 +61,7 @@ export default function Header ({cart, removeFromCart, increaseQuantity, decreas
                             ))}
 
                                 <div className="cartTotal smallText">
-                                    <button className="smallText" onClick={clearCart}>Vacíar la cesta</button>
+                                    <button className="smallText" onClick={clearCart}>Vaciar la cesta</button>
                                     <p>Total: <span>{cartTotal.toFixed(2)}€</span></p>
 
                                 </div>
