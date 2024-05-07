@@ -417,3 +417,18 @@ button.cta:hover {
 .closeInfo i {
   line-height: 2rem;
 }
+
+.footer {
+  background-color: var(--dark);
+  color: var(--light);
+  height: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.footer p {
+  text-align: center;
+}
